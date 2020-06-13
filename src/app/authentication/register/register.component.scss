@@ -1,0 +1,82 @@
+.btn-custom {
+    border: 1px solid #ed1c24;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 0px;
+    color: #333;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    outline: none;
+    padding: 4px 36px 2px;
+}
+
+.sign-in {
+    background-color: #fff;
+    border: 1px #e5e5e5 solid;
+    border-bottom: 2px #e5e5e5 solid;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.move-left {
+    margin-left: 16.667%;
+    width: 66.667%;
+}
+
+.create-new-account {
+    h4 {
+        font-size: 18px;
+        font-family: 'Open Sans', sans-serif;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #ddd;
+    }
+    p {
+    font-size: 15px;
+    color: #666;
+    }
+}
+
+.col-md-12 {
+    float: left;
+}
+.outer-top-xs {
+    margin-top: 20px;
+}
+
+.box {
+    display: inline-block;
+    border: 1px solid #ee1d25;
+    margin-bottom: 30px;
+}
+
+.title-solid {
+    text-transform: uppercase;
+    background-color: #ee1d25;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    color: white;
+    h3 {
+        margin: 0; 
+    }
+}
+
+.box-title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.register-form {
+    .form-group {
+        margin-bottom: 25px;
+        position: relative;
+    }
+    label {
+    font-size: 14px;
+    font-weight: 400;
+    }
+}
+
+.form-control {
+    height: 34px;
+}
