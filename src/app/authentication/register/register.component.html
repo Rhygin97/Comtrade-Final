@@ -1,66 +1,56 @@
 <header></header>
 <div id="main">
-    <nav></nav>
     <article>
-        <div class="container sign-in">
-            <div class="row">
-                <div class="col-md-8 col-sm-8 create-new-account move-left">
-                    <h4 class="checkout-subtitle">Registrujte novi nalog</h4>
-                    <p class="text">Unesite podatke i kreirajte Vaš nalog.</p>
-                    <div class="well">
-                        <form class="register-form outer-top-xs row" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                            <div class="col-md-12">
-                                <div class="box-holder box">
-                                    <div class="box-header">
-                                        <div class="title-solid col-md-12">
-                                            <h3 class="box-title">
-                                                Profil
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div class="box-content">
-                                        <div class="box-row-content-pane form-group col-md-12">
-                                            <label for="username">Korisničko ime</label>
-                                            <input class="form-control" type="text" formControlName="username"
-                                                placeholder="Unesite korisničko ime..." name="username">
-                                        </div>
-                                        <div class="box-row-content-pane form-group col-md-12">
-                                            <label for="email">E-mail</label>
-                                            <input class="form-control" type="text" formControlName="email"
-                                                placeholder="Unesite E-mail..." name="email">
-                                        </div>
-                                        <div class="box-row-content-pane form-group col-md-12">
-                                            <label for="password">Lozinka</label>
-                                            <div class="input-holder">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <input class="form-control" type="password"
-                                                            formControlName="password" placeholder="Unesite lozinku..."
-                                                            name="password">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <input class="form-control" type="password"
-                                                            formControlName="confirmPassword"
-                                                            placeholder="Potvrdite lozinku..." name="confirmPassword">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <button class="btn btn-custom" type="submit">
-                                    Registracija
-                                </button>
-                            </div>
-                        </form>
+        <div class="register-form-wrapper sign-in">
+            <form class="register-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="heading-column create-new-account">
+                    <div class="module-heading">
+                        <h4 class="checkout-subtitle">Registrujte novi nalog</h4>
+                        <p class="text">Unesite podatke i kreirajte Vaš nalog.</p>
                     </div>
                 </div>
-            </div>
+                <div class="box">
+                    <div class="box-header">
+                        <div class="title-solid">
+                            <h3>
+                                Profil
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="heading-column">
+                        <div class="module-heading">
+                            <label for="username">Korisničko ime</label>
+                            <input class="form-control" type="text" formControlName="username"
+                                placeholder="Unesite korisničko ime..." name="username">
+                        </div>
+                        <div class="module-heading">
+                            <label for="email">E-mail</label>
+                            <input class="form-control" type="text" formControlName="email"
+                                placeholder="Unesite E-mail..." name="email">
+                        </div>
+                    </div>
+                    <div class="password-heading">
+                        <label for="password">Lozinka</label>
+                    </div>
+                    <div class="password-column">
+                        <div class="password-input">
+                            <input class="form-control" type="password" formControlName="password"
+                                placeholder="Unesite lozinku..." name="password">
+                        </div>
+                        <div class="repeat-password-input">
+                            <input class="form-control" type="password" formControlName="confirmPassword"
+                            placeholder="Potvrdite lozinku..." name="confirmPassword">
+                        </div>
+                    </div>
+                </div>
+                <div class="heading-column">
+                    <button class="btn btn-custom" type="submit">
+                        Registracija
+                    </button>
+                </div>
+            </form>
         </div>
     </article>
-    <aside></aside>
 </div>
 <footer>
     <app-footer></app-footer>

@@ -1,0 +1,125 @@
+.navbar {
+    padding: 0px;
+}
+
+.navbar-content-wrapper {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbar-column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.navbar-top {
+    display: flex;
+    flex-direction: row;
+}
+
+.top-left-navigation {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+}
+
+.top-right-navigation {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+    justify-content: flex-end;
+}
+
+.navbar-mid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mid-left-navigation {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+}
+
+.mid-second-navigation {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+}
+
+.mid-third-navigation {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.mid-right-navigation {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+    justify-content: flex-end;
+}
+
+.list-unstyled {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-bot {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    background-color: red;
+    justify-content: center;
+}
+
+.module-heading {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#top-nav {
+    background: #666;
+    color: white;
+    font-size: 14px;
+}
+
+#list-left {
+    padding: 3px 12px 3px 7px;
+    border-right: 1px solid #eaeaea;
+}
+
+#link-left {
+    color: white;
+    cursor: pointer;
+}
+
+#link-down {
+    color: white;
+    cursor: pointer;
+    padding: 5px 25px 5px 25px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.profile {
+    background: #fff;
+    border: 2px solid #ed1c24;
+    border-radius: 0px;
+    display: flex;
+    font-size: 50px;
+}
+
+#profileIcon {
+    color: #666;
+    cursor: pointer;
+}
+
+#bottom-nav {
+    background: #ed1c24;
+    padding: 0px;
+}
+

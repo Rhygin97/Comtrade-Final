@@ -1,1 +1,78 @@
-<p>navbar works!</p>
+<nav class="navbar">
+    <div class="navbar-content-wrapper">
+        <div class="navbar-top" id="top-nav">
+            <div class="top-left-navigation">
+                <div class="module-heading">
+                <ul class="list-unstyled">
+                    <li>
+                        <fa-icon [icon]="faPhone"></fa-icon>
+                        065/436-80-11, Kneza Aleksandra 38
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <div class="top-right-navigation">
+                <div class="module-heading">
+                    <ul class="list-unstyled">
+                        <li id="list-left">
+                            <fa-icon [icon]="faUser"></fa-icon>
+                            <a href="/authentication/register" id="link-left"> Registracija</a>
+                        </li>
+                        <li id="list-left">
+                            <fa-icon [icon]="faLock"></fa-icon>
+                            <a href="/authentication/login" id="link-left"> Login</a>
+                    </ul>
+                    </div>
+            </div>
+        </div>
+        <div class="navbar-mid">
+            <div class="mid-left-navigation">
+            <div class="module-heading">
+                <div class="">
+                    <a href="/home/main">
+                        <img class="logo_main" src="http://placehold.it/220x100" alt="logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mid-second-navigation">
+            <div class="input-group-append">
+            <input type="text" class="form-control" placeholder="Pretrazi...">
+                <button class="btn btn-warning" type="button">
+                    <fa-icon [icon]="faSearch"></fa-icon>
+                </button>
+            </div>
+        </div>
+        <div class="mid-third-navigation">
+            <p>Stanje novca na racunu: 6440 RSD</p>
+        </div>
+        <div class="mid-right-navigation">
+            <div class="profile">
+                <a href="/home/profile">
+                    <fa-icon id="profileIcon" [icon]="faIdCard"></fa-icon>
+                </a>
+            </div>
+        </div>
+        </div>
+        <div class="navbar-bot">
+            <ul class="list-unstyled">
+                <li [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class="nav-item">
+                    <a class="nav-link" routerLink="/home/main" id="link-down">Pocetna </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a class="nav-link" routerLink="/home/news" id="link-down">Novosti </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a class="nav-link" routerLink="/home/contact" id="link-down">Kontakt </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a class="nav-link" routerLink="/home/about" id="link-down">O nama </a>
+                </li>
+                <li routerLinkActive="active">
+                    <a class="nav-link" routerLink="/home/profile" id="link-down">Profil </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
