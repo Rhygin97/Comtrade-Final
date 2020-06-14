@@ -10,6 +10,7 @@ import { NavbarComponent } from './home/navbar/navbar.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './helpers/token-interceptor/token-interceptor.service';
 import { ErrorInterceptorService } from './helpers/error-interceptor/error-interceptor.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ErrorInterceptorService } from './helpers/error-interceptor/error-inter
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
 
   ],
   providers: [
