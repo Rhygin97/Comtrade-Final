@@ -1,5 +1,14 @@
+@import '../../../styles.scss';
+
 .navbar {
     padding: 0px;
+    height: 200px;
+    width: 100vw;
+    display: flex;
+    align-items: unset !important;
+    @media(max-width: $media-md) {
+        height: auto;
+    }
 }
 
 .navbar-content-wrapper {
@@ -18,12 +27,18 @@
 .navbar-top {
     display: flex;
     flex-direction: row;
+    @media(max-width: $media-sm) {
+        flex-direction: column;
+    }
 }
 
 .top-left-navigation {
     display: flex;
     flex-direction: row;
     flex: 2;
+    @media(max-width: $media-sm) {
+        justify-content: center;
+    }
 }
 
 .top-right-navigation {
@@ -31,49 +46,78 @@
     flex-direction: row;
     flex: 2;
     justify-content: flex-end;
+    @media(max-width: $media-sm) {
+        justify-content: center;
+    }
 }
 
 .navbar-mid {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    @media(max-width: $media-md) {
+        flex-direction: column;
+    }
 }
 
 .mid-left-navigation {
     display: flex;
     flex-direction: row;
     flex: 2;
+    @media(max-width: $media-md) {
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
 
 .mid-second-navigation {
     display: flex;
     flex-direction: row;
     flex: 2;
+    align-items: center;
+    @media(max-width: $media-md) {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
 }
 
 .mid-third-navigation {
     display: flex;
     flex-direction: row;
     flex: 1;
+    align-items: center;
+    margin-left: 40px;
+    @media(max-width: $media-md) {
+        justify-content: center;
+        margin-left: 0px;
+        margin-bottom: 10px;
+    }
 }
 
 .mid-right-navigation {
     display: flex;
     flex-direction: row;
     flex: 2;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    @media(max-width: $media-md) {
+        flex: 1;
+        margin-bottom: 10px;
+    }
 }
 
 .list-unstyled {
     display: flex;
     flex-direction: row;
+    margin: 0;
 }
 
 .navbar-bot {
     display: flex;
     flex: 1;
     flex-direction: row;
-    background-color: red;
+    background-color: #ffc107;
     justify-content: center;
 }
 
@@ -93,9 +137,23 @@
     border-right: 1px solid #eaeaea;
 }
 
+#list-right {
+    padding: 3px 12px 3px 7px;
+    border-right: 1px solid #eaeaea;
+    @media(max-width: $media-md) {
+        border-right: 0px;
+    }
+}
+
 #link-left {
     color: white;
     cursor: pointer;
+}
+
+.input-group-append {
+    @media(max-width: $media-md) {
+        max-width: 50vw;
+    }
 }
 
 #link-down {
@@ -107,10 +165,11 @@
 
 .profile {
     background: #fff;
-    border: 2px solid #ed1c24;
+    border: 2px solid #ffc107;
     border-radius: 0px;
     display: flex;
     font-size: 50px;
+    padding: 0 15px 0 15px;
 }
 
 #profileIcon {
@@ -119,7 +178,33 @@
 }
 
 #bottom-nav {
-    background: #ed1c24;
+    background: #ffc107;
     padding: 0px;
 }
 
+.navbar-bot-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+}
+
+.navigation-item {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 20px;
+    letter-spacing: normal;
+    color: #fff !important;
+}
+
+a {
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #fff;
+}

@@ -1,33 +1,40 @@
+@import '../../../styles.scss';
+
 body {
     margin: 0;
 }
 #main {
     display: flex;
-    min-height: calc(100vh - 40vh);
+    min-height: calc(100vh - 300px - 200px);
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-#main > article {
+.login-wrapper {
+    display: flex;
+    flex: 3;
+    justify-content: center;
+}
+
+.heading-column {
+    display: flex;
     flex: 1;
+    flex-direction: column;
 }
 
-#main > aside {
-    flex: 0 0 10vw;
-}
-
-#main > nav {
-    flex: 10vw 0 0;
-}
-header, footer, article, nav, aside {
-    padding: 1em;
-}
-
-header, footer {
-    background: yellowgreen;
-    height: 20vh;
+.module-heading {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: #898989;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
 }
 
 .btn-custom {
-    border: 1px solid #ed1c24;
+    border: 1px solid #ffc107;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 0px;
     color: #333;
@@ -37,14 +44,7 @@ header, footer {
     text-transform: uppercase;
     outline: none;
     padding: 4px 36px 2px;
-}
-
-.position {
-    position: relative;
-}
-
-.pull-right {
-    float: right;
+    
 }
 
 .sign-in {
@@ -53,11 +53,6 @@ header, footer {
     border-bottom: 2px #e5e5e5 solid;
     padding: 20px;
     overflow: hidden;
-}
-
-.move-left {
-    margin-left: 16.667%;
-    width: 66.667%;
 }
 
 .customer-login {
@@ -73,22 +68,12 @@ header, footer {
     }
 }
 
-.outer-top-xs {
-    margin-top: 20px;
-}
-
-.login-form {
-    .form-group {
-        margin-bottom: 25px;
-        position: relative;
-        padding: 0;
+.box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 40vw;
+    @media(max-width: $media-sm) {
+        width: 90vw !important;
     }
-    label {
-        font-size: 14px;
-        font-weight: 400;
-    }
-}
-
-.form-control {
-    height: 34px;
 }

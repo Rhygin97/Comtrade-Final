@@ -6,7 +6,7 @@
                 <ul class="list-unstyled">
                     <li>
                         <fa-icon [icon]="faPhone"></fa-icon>
-                        065/436-80-11, Kneza Aleksandra 38
+                        Call centar: 065/436-80-11, Kneza Aleksandra 38
                     </li>
                 </ul>
             </div>
@@ -18,7 +18,7 @@
                             <fa-icon [icon]="faUser"></fa-icon>
                             <a href="/authentication/register" id="link-left"> Registracija</a>
                         </li>
-                        <li id="list-left">
+                        <li id="list-right">
                             <fa-icon [icon]="faLock"></fa-icon>
                             <a href="/authentication/login" id="link-left"> Login</a>
                     </ul>
@@ -29,9 +29,7 @@
             <div class="mid-left-navigation">
             <div class="module-heading">
                 <div class="">
-                    <a href="/home/main">
                         <img class="logo_main" src="http://placehold.it/220x100" alt="logo">
-                    </a>
                 </div>
             </div>
         </div>
@@ -44,7 +42,7 @@
             </div>
         </div>
         <div class="mid-third-navigation">
-            <p>Stanje novca na racunu: 6440 RSD</p>
+            <div><span>Stanje novca na racunu: 6440 RSD</span></div>
         </div>
         <div class="mid-right-navigation">
             <div class="profile">
@@ -55,24 +53,23 @@
         </div>
         </div>
         <div class="navbar-bot">
-            <ul class="list-unstyled">
-                <li [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" class="nav-item">
-                    <a class="nav-link" routerLink="/home/main" id="link-down">Pocetna </a>
-                </li>
-                <li routerLinkActive="active">
-                    <a class="nav-link" routerLink="/home/news" id="link-down">Novosti </a>
-                </li>
-                <li routerLinkActive="active">
-                    <a class="nav-link" routerLink="/home/contact" id="link-down">Kontakt </a>
-                </li>
-                <li routerLinkActive="active">
-                    <a class="nav-link" routerLink="/home/about" id="link-down">O nama </a>
-                </li>
-                <li routerLinkActive="active">
-                    <a class="nav-link" routerLink="/home/profile" id="link-down">Profil </a>
-                </li>
-            </ul>
-
+            <div class="navbar-bot-wrapper">
+                <div class="navigation-item">
+                    <a [routerLink]="['/home/main']">Početna</a>
+                </div>
+                <div class="navigation-item">
+                    <a [routerLink]="['/home/news']">Novosti</a>
+                </div>
+                <div class="navigation-item">
+                    <a [routerLink]="['/home/contact']">Kontakt</a>
+                </div>
+                <div class="navigation-item">
+                    <a [routerLink]="['/home/about']">O nama</a>
+                </div>
+                <div class="navigation-item">
+                    <a [routerLink]="['/home/profile']">Profil</a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
