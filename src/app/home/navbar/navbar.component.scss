@@ -202,6 +202,22 @@
     color: #fff !important;
 }
 
+.left-side-navigation {
+    display: flex;
+    flex-direction: row;
+    @media(max-width: $media-sm) {
+        flex-direction: column;
+    }
+}
+
+.right-side-navigation {
+    display: flex;
+    flex-direction: row;
+    @media(max-width: $media-sm) {
+        flex-direction: column;
+    }
+}
+
 a {
     text-decoration: none;
     padding-left: 10px;

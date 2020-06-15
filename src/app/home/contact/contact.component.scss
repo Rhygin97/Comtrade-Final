@@ -10,3 +10,45 @@ body {
     align-items: center;
     margin-bottom: 20px;
 }
+
+.contact-wrapper { 
+    display: flex;
+    flex: 3;
+    justify-content: center;
+}
+
+.contact-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: inherit;
+}
+
+.contact-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.sign-in {
+    background-color: #fff;
+    border: 1px #e5e5e5 solid;
+    border-bottom: 2px #e5e5e5 solid;
+    padding: 20px;
+    overflow: hidden;
+    width: 30vw;
+}
+
+.customer-login {
+    h3 {
+        font-size: 24px;
+        font-family: 'Open Sans', sans-serif;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+    }
+    p {
+        font-size: 14px;
+        color: #666;
+    }
+}

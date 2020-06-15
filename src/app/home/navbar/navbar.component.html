@@ -3,13 +3,13 @@
         <div class="navbar-top" id="top-nav">
             <div class="top-left-navigation">
                 <div class="module-heading">
-                <ul class="list-unstyled">
-                    <li>
-                        <fa-icon [icon]="faPhone"></fa-icon>
-                        Call centar: 065/436-80-11, Kneza Aleksandra 38
-                    </li>
-                </ul>
-            </div>
+                    <ul class="list-unstyled">
+                        <li>
+                            <fa-icon [icon]="faPhone"></fa-icon>
+                            Call centar: 065/436-80-11, Kneza Aleksandra 38
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="top-right-navigation">
                 <div class="module-heading">
@@ -22,52 +22,56 @@
                             <fa-icon [icon]="faLock"></fa-icon>
                             <a href="/authentication/login" id="link-left"> Login</a>
                     </ul>
-                    </div>
+                </div>
             </div>
         </div>
         <div class="navbar-mid">
             <div class="mid-left-navigation">
-            <div class="module-heading">
-                <div class="">
+                <div class="module-heading">
+                    <div class="">
                         <img class="logo_main" src="http://placehold.it/220x100" alt="logo">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="mid-second-navigation">
-            <div class="input-group-append">
-            <input type="text" class="form-control" placeholder="Pretrazi...">
-                <button class="btn btn-warning" type="button">
-                    <fa-icon [icon]="faSearch"></fa-icon>
-                </button>
+            <div class="mid-second-navigation">
+                <div class="input-group-append">
+                    <input type="text" class="form-control" placeholder="Pretrazi...">
+                    <button class="btn btn-warning" type="button">
+                        <fa-icon [icon]="faSearch"></fa-icon>
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="mid-third-navigation">
-            <div><span>Stanje novca na racunu: 6440 RSD</span></div>
-        </div>
-        <div class="mid-right-navigation">
-            <div class="profile">
-                <a href="/home/profile">
-                    <fa-icon id="profileIcon" [icon]="faIdCard"></fa-icon>
-                </a>
+            <div class="mid-third-navigation">
+                <div><span>Stanje novca na racunu: 6440 RSD</span></div>
             </div>
-        </div>
+            <div class="mid-right-navigation">
+                <div class="profile">
+                    <a href="/home/profile">
+                        <fa-icon id="profileIcon" [icon]="faIdCard"></fa-icon>
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="navbar-bot">
             <div class="navbar-bot-wrapper">
-                <div class="navigation-item">
-                    <a [routerLink]="['/home/main']">Početna</a>
+                <div class="left-side-navigation">
+                    <div class="navigation-item">
+                        <a [routerLink]="['/home/main']">Početna</a>
+                    </div>
+                    <div class="navigation-item">
+                        <a [routerLink]="['/home/news']">Novosti</a>
+                    </div>
                 </div>
-                <div class="navigation-item">
-                    <a [routerLink]="['/home/news']">Novosti</a>
-                </div>
-                <div class="navigation-item">
-                    <a [routerLink]="['/home/contact']">Kontakt</a>
-                </div>
-                <div class="navigation-item">
-                    <a [routerLink]="['/home/about']">O nama</a>
-                </div>
-                <div class="navigation-item">
-                    <a [routerLink]="['/home/profile']">Profil</a>
+                <div class="right-side-navigation">
+                    <div class="navigation-item">
+                        <a [routerLink]="['/home/contact']">Kontakt</a>
+                    </div>
+                    <div class="navigation-item">
+                        <a [routerLink]="['/home/about']">O nama</a>
+                    </div>
+                    <div class="navigation-item">
+                        <a [routerLink]="['/home/profile']">Profil</a>
+                    </div>
                 </div>
             </div>
         </div>
