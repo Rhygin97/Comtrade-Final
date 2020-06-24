@@ -5,16 +5,17 @@ body {
 }
 #main {
     display: flex;
-    min-height: calc(100vh - 300px - 20px - 200px);
+    min-height: calc(100vh - 300px - 20px - 20px - 200px);
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .contact-wrapper { 
     display: flex;
     flex: 3;
-    justify-content: center;
+    justify-content: center;   
 }
 
 .contact-column {
@@ -37,6 +38,9 @@ body {
     padding: 20px;
     overflow: hidden;
     width: 30vw;
+    @media (max-width: $media-xl) {
+        width: 80vw;
+    }
 }
 
 .customer-login {
