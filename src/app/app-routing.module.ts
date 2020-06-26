@@ -9,6 +9,8 @@ import { NewsComponent } from './home/news/news.component';
 import { AboutComponent } from './home/about/about.component';
 import { ContactComponent } from './home/contact/contact.component';
 import { ProfileComponent } from './home/profile/profile.component';
+import { ProductsComponent } from './home/products/products.component';
+import { ProductComponent } from './home/product/product.component';
 
 
 const routes: Routes = [
@@ -63,6 +65,16 @@ const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'products',
+        component: ProductsComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'product/:id',
+        component: ProductComponent,
         pathMatch: 'full'
       },
     ]

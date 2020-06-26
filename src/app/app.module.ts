@@ -16,6 +16,8 @@ import { NewsComponent } from './home/news/news.component';
 import { ContactComponent } from './home/contact/contact.component';
 import { AboutComponent } from './home/about/about.component';
 import { ProfileComponent } from './home/profile/profile.component';
+import { ProductsComponent } from './home/products/products.component';
+import { ProductComponent } from './home/product/product.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ProfileComponent } from './home/profile/profile.component';
     NewsComponent,
     ContactComponent,
     AboutComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProductsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,6 @@ import { ProfileComponent } from './home/profile/profile.component';
     ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule
-
   ],
   providers: [
     {

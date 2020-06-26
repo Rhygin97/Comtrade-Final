@@ -1,0 +1,46 @@
+<header>
+    <app-navbar></app-navbar>
+</header>
+<div id="main">
+    <article>
+        <div class="wrapper">
+            <div *ngFor="let product of products" class="table-items">
+                <table>
+                    <thead>
+                        <div class="name-tag">
+                            <tr>
+                                <td> {{ product.name }} </td>
+                            </tr>
+                        </div>
+                        
+                    </thead>
+                    <tbody>
+                        <div (click)="goToProduct(product.id)" class="image-tag">
+                            <tr>
+                                <th><img src="http://placehold.it/150x150" alt="..."></th>
+                            </tr>
+                        </div>
+                        <div class="description-tag">
+                            <tr>
+                                <td> {{ product.description }} </td>
+                            </tr>
+                        </div>
+                        <div class="price-tag">
+                            <tr>
+                                <td> {{ product.price }} </td>
+                            </tr>
+                        </div>
+                        <div class="stock-tag">
+                            <tr>
+                                <td> {{ product.stock }} </td>
+                            </tr>
+                        </div>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </article>
+</div>
+<footer>
+    <app-footer></app-footer>
+</footer>
