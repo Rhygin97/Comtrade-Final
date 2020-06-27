@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-products',
@@ -8,68 +10,39 @@ import { Router } from '@angular/router';
 })
 export class ProductsComponent implements OnInit {
 
-  products = [
-    {
-      "id": "0",
-      "name": "Ime Proizvoda 1",
-      "description": "Opis Proizvoda 1",
-      "price": "1000,00",
-      "stock": "Trenutno na stanju: 10",
-      "img": "url_slike_neki"		
-    },
-    {
-      "id": "1",
-      "name": "Ime Proizvoda 2",
-      "description": "Opis Proizvoda 2",
-      "price": "2000,00",
-      "stock": "Trenutno na stanju: 20",
-      "img": "url_slike_neki"		
-    },
-    {
-      "id": "2",
-      "name": "Ime Proizvoda 3",
-      "description": "Opis Proizvoda 3",
-      "price": "3000,00",
-      "stock": "Trenutno na stanju: 30",
-      "img": "url_slike_neki"		
-    },
-    {
-      "id": "3",
-      "name": "Ime Proizvoda 4",
-      "description": "Opis Proizvoda 4",
-      "price": "4000,00",
-      "stock": "Trenutno na stanju: 40",
-      "img": "url_slike_neki"		
-    },
-    {
-      "id": "4",
-      "name": "Ime Proizvoda 5",
-      "description": "Opis Proizvoda 5",
-      "price": "5000,00",
-      "stock": "Trenutno na stanju: 50",
-      "img": "url_slike_neki"		
-    },
-    {
-      "id": "5",
-      "name": "Ime Proizvoda 5",
-      "description": "Opis Proizvoda 5",
-      "price": "6000,00",
-      "stock": "Trenutno na stanju: 60",
-      "img": "url_slike_neki"		
-    },
-    {
-      "id": "6",
-      "name": "Ime Proizvoda 7",
-      "description": "Opis Proizvoda 7",
-      "price": "7000,00",
-      "stock": "Trenutno na stanju: 70",
-      "img": "url_slike_neki"		
-    }
-  ]
+  productsForm: FormGroup;
+  name;
+  description;
+  price;
+  stock;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private productService: ProductService,
+    ) { }
 
   ngOnInit(): void {
+    this.createProductsForm();
+  }
+
+  createProductsForm() {
+    this.productsForm = new FormGroup({
+      'name': new FormControl(this.name, [Validators.required]),
+      'description': new FormControl(this.description, [Validators.required]),
+      'price': new FormControl(this.price, [Validators.required]),
+      'stock': new FormControl(this.stock, [Validators.required]),
+    });
+  }
+
+  onSubmit() {
+    this.productService.createProduct(this.productsForm.value).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
   goToProduct(id) {

@@ -13,7 +13,7 @@ import { AuthenticationService } from '../authentication.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  email;
+  username;
   password;
 
   constructor(
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     
   createLoginForm() {
     this.loginForm = new FormGroup({
-      'email': new FormControl(this.email, [Validators.required]),
+      'username': new FormControl(this.username, [Validators.required]),
       'password': new FormControl(this.password, [Validators.required])
     })
   }
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       (response:any) => {
         this.storageService.saveUser(JSON.stringify(response));
         this.storageService.saveToken(response.authorization.token);
-        this.router.navigate(["/"]);
+        this.router.navigate(["/home/main"]);
       },
       error => {
         console.log(error);

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class AuthenticationService {
 
-  baseUrl = 'http://109.92.44.88:3000';
+  baseUrl = 'http://87.250.59.231:3000';
   registerUrl = this.baseUrl + '/users';
   loginUrl = this.baseUrl + '/users/authenticate';
 
