@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -7,72 +8,34 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-
-  products = [
-    {
-      "id": "0",
-      "name": "Ime Proizvoda 112312312",
-      "description": "Opis Proizvoda 1",
-      "price": "Cena proizvoda 1",
-      "stock": "10",
-      "img": "url_slike_neki"		
-    },
-    {
-      "name": "Ime Proizvoda 2",
-      "description": "Opis Proizvoda 2",
-      "price": "Cena proizvoda 2",
-      "stock": "20",
-      "img": "url_slike_neki"		
-    },
-    {
-      "name": "Ime Proizvoda 3",
-      "description": "Opis Proizvoda 3",
-      "price": "Cena proizvoda 3",
-      "stock": "30",
-      "img": "url_slike_neki"		
-    },
-    {
-      "name": "Ime Proizvoda 4",
-      "description": "Opis Proizvoda 4",
-      "price": "Cena proizvoda 4",
-      "stock": "40",
-      "img": "url_slike_neki"		
-    },
-    {
-      "name": "Ime Proizvoda 5",
-      "description": "Opis Proizvoda 5",
-      "price": "Cena proizvoda 5",
-      "stock": "50",
-      "img": "url_slike_neki"		
-    },
-    {
-      "name": "Ime Proizvoda 5",
-      "description": "Opis Proizvoda 5",
-      "price": "Cena proizvoda 5",
-      "stock": "60",
-      "img": "url_slike_neki"		
-    },
-    {
-      "name": "Ime Proizvoda 7",
-      "description": "Opis Proizvoda 7",
-      "price": "Cena proizvoda 7",
-      "stock": "70",
-      "img": "url_slike_neki"		
-    }
-  ]
-
+  product = null;
   id;
 
-  constructor( private activeRoute: ActivatedRoute) { }
+  constructor( private activeRoute: ActivatedRoute,
+      private productService: ProductService,
+    ) { }
 
   ngOnInit(): void {
     this.activeRoute.params.subscribe(
       params => {
         this.id = params.id;
+        this.getProduct();
       },
       error => {
         console.log(error);
       }
     )}
+    
+    baseUrl = 'http://87.250.59.231:3000';
 
+    getProduct() {
+      this.productService.getProduct(this.id).subscribe(
+        response => {
+          this.product = response;
+        },
+        error => {
+          console.log(error);
+        }
+      )
+    }
 }

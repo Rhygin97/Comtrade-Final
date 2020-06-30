@@ -7,15 +7,16 @@ body {
     display: flex;
     min-height: calc(100vh - 300px - 20px - 20px - 200px);
     align-items: center;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .products-wrapper {
     display: flex;
     flex: 3;
     justify-content: center;
+    @media(max-width: $media-sm) {
+        flex-direction: column;
+    }
 }
 
 .heading-column {
@@ -48,14 +49,14 @@ body {
 }
 
 .sign-in {
-    background-color: #fff;
-    border: 1px #e5e5e5 solid;
-    border-bottom: 2px #e5e5e5 solid;
-    padding: 20px;
-    overflow: hidden;
+    @media(max-width: $media-sm) {
+        margin-bottom: 10px;
+    }
 }
 
 .customer-products {
+    border: 1px #e5e5e5 solid;
+    padding: 20px;
     h4 {
         font-size: 24px;
         font-family: 'Open Sans', sans-serif;
@@ -69,12 +70,30 @@ body {
     }
 }
 
-.box {
+.single-product {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-    width: 30vw;
-    @media(max-width: $media-sm) {
-        width: 40vw !important;
+    flex-direction: row;
+    align-items: baseline;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    h5 {
+        font-size: 20px;
+        font-family: 'Open Sans', sans-serif;
+    }
+    p {
+        font-size: 15px;
+        color: #666;
+        text-align: end;
+    }   
+}
+
+.single-products-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex: 1;
+    flex-wrap: wrap;
+    @media (max-width: $media-md) {
+        flex-direction: column;
     }
 }

@@ -8,7 +8,7 @@ export class ProductService {
 
   baseUrl = 'http://87.250.59.231:3000';
   productsURL = this.baseUrl + '/products';
-  productURL = this.baseUrl + '/products' + 'id';
+  productURL = this.baseUrl + '/products/' + 'id';
 
   constructor(private http: HttpClient) { }
 
@@ -20,8 +20,8 @@ getProducts() {
   return this.http.get(this.productsURL);
 }
 
-getProduct() {
-  return this.http.get(this.productURL);
+getProduct(id) {
+  return this.http.get(`${this.baseUrl}/products/ ${id}`);
 }
 
 }

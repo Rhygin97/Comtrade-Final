@@ -27,4 +27,17 @@ saveUser(user) {
 getUser() {
   return JSON.parse(localStorage.getItem('user'));
 }
+
+addMoney(price) {
+  localStorage.setItem('price', price);
+}
+
+getMoney() {
+  return localStorage.getItem('price');
+}
+
+setMoney() {
+
+}
+
 }

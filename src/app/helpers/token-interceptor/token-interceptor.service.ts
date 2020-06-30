@@ -14,14 +14,26 @@ export class TokenInterceptorService implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler) {
     const token = this.storageService.getToken();
 
+    const baseUrl = 'http://87.250.59.231:3000';
+
     if(token) {
-      request = request.clone({
-        setHeaders: {
-          Authorization: 'Bearer ' + token,
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        }
-      });
+      if (request.url.includes(baseUrl + "/photos")) {
+        request = request.clone({
+          setHeaders: {
+            Authorization: 'Bearer ' + token,
+            'Accept': 'application/json',
+          }
+        });
+      }
+      else {
+        request = request.clone({
+          setHeaders: {
+            Authorization: 'Bearer ' + token,
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        });
+      }
     }
     else {
       request = request.clone({

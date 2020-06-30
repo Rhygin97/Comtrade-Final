@@ -4,6 +4,10 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { faIdCard } from '@fortawesome/free-solid-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import { StorageService } from 'src/app/services/storage.service';
+import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -17,20 +21,23 @@ export class NavbarComponent implements OnInit {
   faIdCard = faIdCard;
   faSearch = faSearch;
   faBars = faBars;
+  faWindowClose = faWindowClose;
 
-  menuShowed = false;
-
-  constructor() { }
+  constructor(
+    private storageService: StorageService,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
 
-  public tapMenu() {
-    this.menuShowed = !this.menuShowed;
+  logoutUser() {
+    this.storageService.clearStorage();
+    this.router.navigate(["/authentication/login"]);
   }
 
-  public closeMenu() {
-    this.menuShowed = false;
+  username() {
+    this.storageService.getUser();
   }
 
 }

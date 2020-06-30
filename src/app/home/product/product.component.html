@@ -1,14 +1,23 @@
-<div>
-    <div>
-        name {{ products[id].name }}
-    </div>
-    <div>
-        description {{ products[id].description }}
-    </div>
-    <div>
-        price {{ products[id].price }}
-    </div>
-    <div>
-        stock {{ products[id].stock }}
-    </div>
+<header>
+    <app-navbar></app-navbar>
+</header>
+<div id="main">
+    <article>
+        <div class="product-wrapper customer-login sign-in">
+            <div class="product-info">
+                <div class="product-column">
+                    <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
+                        alt="...">
+                    <img *ngIf="!product.photo" src="http://placehold.it/170x170" alt="...">
+                    <h5 class="subtitle"> {{ product.name }}</h5>
+                    <p> {{ product.description }} </p>
+                    <p> Cena: {{ product.price }} </p>
+                    <p> Trenutno na stanju: {{ product.stock }} </p>
+                </div>
+            </div>
+        </div>
+    </article>
 </div>
+<footer>
+    <app-footer></app-footer>
+</footer>

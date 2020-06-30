@@ -3,42 +3,72 @@
 </header>
 <div id="main">
     <article>
-        <div class="products-wrapper sign-in">
-            <div class="heading-column customer-products move-left">
-                <div class="module-heading">
-                    <h4>Kreirajte proizvod</h4>
-                </div>
-                <form class="products-form" [formGroup]="productsForm" (ngSubmit)="onSubmit()">
-                    <div class="heading-column box">
-                        <div class="module-heading">
-                            <label for="name">Ime proizvoda</label>
-                            <input class="form-control" type="text" formControlName="name"
-                                placeholder="Unesite Ime proizvoda..." name="name">
-                        </div>
-                        <div class="module-heading">
-                            <label for="description">Opis proizvoda</label>
-                            <input class="form-control" type="text" formControlName="description"
-                                placeholder="Unesite Opis proizvoda..." name="description">
-                        </div>
-                        <div class="module-heading">
-                            <label for="price">Cena proizvoda</label>
-                            <input class="form-control" type="text" formControlName="price"
-                                placeholder="Unesite Cenu proizvoda..." name="price">
-                        </div>
-                        <div class="module-heading">
-                            <label for="stock">Trenutno na stanju</label>
-                            <input class="form-control" type="text" formControlName="stock"
-                                placeholder="Trenutno na stanju..." name="stock">
-                        </div>
+        <div class="products-wrapper">
+            <div class="create-wrapper sign-in">
+                <div class="heading-column customer-products move-left">
+                    <div class="module-heading">
+                        <h4>Kreirajte proizvod</h4>
+                    </div>
+                    <form class="products-form" [formGroup]="productsForm" (ngSubmit)="onSubmit()">
                         <div class="heading-column">
                             <div class="module-heading">
-                                <button class="btn btn-custom" type="submit">
-                                    Kreirajte proizvod
-                                </button>
+                                <label for="name">Ime proizvoda</label>
+                                <input class="form-control" type="text" formControlName="name"
+                                    placeholder="Unesite Ime proizvoda..." name="name">
                             </div>
+                            <div class="module-heading">
+                                <label for="description">Opis proizvoda</label>
+                                <input class="form-control" type="text" formControlName="description"
+                                    placeholder="Unesite Opis proizvoda..." name="description">
+                            </div>
+                            <div class="module-heading">
+                                <label for="price">Cena proizvoda</label>
+                                <input class="form-control" type="text" formControlName="price"
+                                    placeholder="Unesite Cenu proizvoda..." name="price">
+                            </div>
+                            <div class="module-heading">
+                                <label for="stock">Trenutno na stanju</label>
+                                <input class="form-control" type="text" formControlName="stock"
+                                    placeholder="Trenutno na stanju..." name="stock">
+                            </div>
+                            <div class="heading-column">
+                                <div class="module-heading">
+                                    <button class="btn btn-custom" type="submit">
+                                        Kreirajte proizvod
+                                    </button>
+                                </div>
+                                <div class="module-heading">
+                                    <button *ngIf="!imagePreview" class="image-button btn btn-custom"
+                                        (click)="imageUpload()">
+                                        Dodajte sliku
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="image-button" *ngIf="imagePreview" (click)="imageUpload()">
+                                <img *ngIf="imagePreview" src="{{ imagePreview }}" class="profile-photo-wrapper" />
+                            </button>
+                            <input id="inputImageUpload" accept="image/*" type="file" name="inputImageUpload" hidden
+                                (change)="fileChangeEvent($event)" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="single-products-wrapper">
+                <div *ngFor="let product of products" class="single-product">
+                    <div class="card" style="width: 12rem;">
+                        <h5 class="card-title"> {{ product.name }}</h5>
+                        <div (click)="goToProduct(product.id)">
+                            <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
+                                class="card-img-top" alt="...">
+                            <img *ngIf="!product.photo" src="http://placehold.it/170x170" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text"> {{ product.description }} </p>
+                            <p class="card-text"> Cena: {{ product.price }} </p>
+                            <p class="card-text"> Trenutno na stanju: {{ product.stock }} </p>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </article>

@@ -12,10 +12,8 @@ import { TokenInterceptorService } from './helpers/token-interceptor/token-inter
 import { ErrorInterceptorService } from './helpers/error-interceptor/error-interceptor.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MainComponent } from './home/main/main.component';
-import { NewsComponent } from './home/news/news.component';
 import { ContactComponent } from './home/contact/contact.component';
 import { AboutComponent } from './home/about/about.component';
-import { ProfileComponent } from './home/profile/profile.component';
 import { ProductsComponent } from './home/products/products.component';
 import { ProductComponent } from './home/product/product.component';
 
@@ -27,10 +25,8 @@ import { ProductComponent } from './home/product/product.component';
     FooterComponent,
     NavbarComponent,
     MainComponent,
-    NewsComponent,
     ContactComponent,
     AboutComponent,
-    ProfileComponent,
     ProductsComponent,
     ProductComponent
   ],
@@ -40,7 +36,7 @@ import { ProductComponent } from './home/product/product.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   providers: [
     {
