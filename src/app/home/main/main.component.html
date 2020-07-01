@@ -9,17 +9,17 @@
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <a href="...">
+                                <a href="/home/product/4">
                                     <img src="assets/images/main1.jpg" alt="...">
                                 </a>
                             </div>
                             <div class="carousel-item">
-                                <a href="">
+                                <a href="/home/product/5">
                                     <img src="assets/images/main2.jpg" alt="...">
                                 </a>
                             </div>
                             <div class="carousel-item">
-                                <a href="">
+                                <a href="/home/product/6">
                                     <img src="assets/images/main3.jpg" alt="...">
                                 </a>
                             </div>
@@ -74,89 +74,100 @@
             <h3>Najbolje u ponudi</h3>
 
             <div class="row-wrapper">
-                <div class="row">
+                <div *ngIf="products" class="row">
                     <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card">
-                            <img src="assets/images/bottom1.jpg" class="card-img-top" alt="...">
+                        <div *ngIf="getProductById(4); let product"  class="card">
+                            <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
+                            alt="...">
+                            <img *ngIf="!product.photo" src="http://placehold.it/128x128" alt="...">   
                             <div class="card-body">
-                                <p class="card-text">Asus ZenBook UM431DA-AM010T Win10 14",AMD QC R5-3500U/8GB/256
-                                    SSD/Vega 8</p>
+                                <p class="card-text">{{ product.description }}</p>
                                 <div class="move-down">
                                     <p class="old-price">99.989 RSD</p>
-                                    <p class="price">89.990 RSD</p>
-                                    <p class="stock">Trenutno na stanju: 3</p>
-                                    <a href="#" class="btn btn-outline-warning">Detaljnije</a>
+                                    <p class="price">{{ product.price }} RSD</p>
+                                    <p class="stock">Trenutno na stanju: {{ product.stock }}</p>
+                                    <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal" (click)="setModalProduct(product)">Kupi</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card">
-                            <img src="assets/images/bottom2.jpg" class="card-img-top" alt="...">
+                        <div *ngIf="getProductById(2); let product" class="card">
+                            <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
+                            alt="...">
+                            <img *ngIf="!product.photo" src="http://placehold.it/128x128" alt="...">   
                             <div class="card-body">
-                                <p class="card-text">Konzola Playstation 4 1TB Pro, Gamma Chassis Crna</p>
+                                <p class="card-text">{{ product.description }}</p>
                                 <div class="move-down">
                                     <p class="old-price">61.110 RSD</p>
-                                    <p class="price">54.999 RSD</p>
-                                    <p class="stock">Trenutno na stanju: 5</p>
-                                    <a href="#" class="btn btn-outline-warning">Detaljnije</a>
+                                    <p class="price">{{ product.price }} RSD</p>
+                                    <p class="stock">Trenutno na stanju: {{ product.stock }}</p>
+                                    <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal" (click)="setModalProduct(product)">Kupi</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card">
-                            <img src="assets/images/bottom3.jpg" class="card-img-top" alt="...">
+                        <div *ngIf="getProductById(2); let product" class="card">
+                            <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
+                            alt="...">
+                            <img *ngIf="!product.photo" src="http://placehold.it/128x128" alt="...">   
                             <div class="card-body">
-                                <p class="card-text">Smart Apple iPhone SE2 64 GB mx9t2se/a Beli</p>
+                                <p class="card-text">{{ product.description }}</p>
                                 <div class="move-down">
                                     <p class="old-price">72.767 RSD</p>
-                                    <p class="price">65.490 RSD</p>
-                                    <p class="stock">Trenutno na stanju: 5</p>
-                                    <a href="#" class="btn btn-outline-warning">Detaljnije</a>
+                                    <p class="price">{{ product.price }} RSD</p>
+                                    <p class="stock">Trenutno na stanju: {{ product.stock }}</p>
+                                    <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal" (click)="setModalProduct(product)">Kupi</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card">
-                            <img src="assets/images/bottom4.jpg" class="card-img-top" alt="...">
+                        <div *ngIf="getProductById(2); let product" class="card">
+                            <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
+                            alt="...">
+                            <img *ngIf="!product.photo" src="http://placehold.it/128x128" alt="...">   
                             <div class="card-body">
-                                <p class="card-text">Kućište Antec Dark Avenger Window RGB, DA601</p>
+                                <p class="card-text">{{ product.description }}</p>
                                 <div class="move-down">
                                     <p class="old-price">13.322 RSD</p>
-                                    <p class="price">11.990 RSD</p>
-                                    <p class="stock">Trenutno na stanju: 20</p>
-                                    <a href="#" class="btn btn-outline-warning">Detaljnije</a>
+                                    <p class="price">{{ product.price }} RSD</p>
+                                    <p class="stock">Trenutno na stanju: {{ product.stock }}</p>
+                                    <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal" (click)="setModalProduct(product)">Kupi</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card">
-                            <img src="assets/images/bottom5.jpg" class="card-img-top" alt="...">
+                        <div *ngIf="getProductById(2); let product" class="card">
+                            <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
+                            alt="...">
+                            <img *ngIf="!product.photo" src="http://placehold.it/128x128" alt="...">   
                             <div class="card-body">
-                                <p class="card-text">Digitalni foto-aparat Canon EOS 2000D DC III Set (Sa 18-55mm), Crna
+                                <p class="card-text">{{ product.description }}
                                 </p>
                                 <div class="move-down">
                                     <p class="old-price">45.667 RSD</p>
-                                    <p class="price">41.100 RSD</p>
-                                    <p class="stock">Trenutno na stanju: 3</p>
-                                    <a href="#" class="btn btn-outline-warning">Detaljnije</a>
+                                    <p class="price">{{ product.price }} RSD</p>
+                                    <p class="stock">Trenutno na stanju: {{ product.stock }}</p>
+                                    <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal" (click)="setModalProduct(product)">Kupi</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card">
-                            <img src="assets/images/bottom6.jpg" class="card-img-top" alt="...">
+                        <div *ngIf="getProductById(2); let product" class="card">
+                            <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
+                            alt="...">
+                            <img *ngIf="!product.photo" src="http://placehold.it/128x128" alt="...">   
                             <div class="card-body">
-                                <p class="card-text">Bežični zvučnik 1.0 Xwave B Square bluetooth 5W crna</p>
+                                <p class="card-text">{{ product.description }}</p>
                                 <div class="move-down">
                                     <p class="old-price">3.322 RSD</p>
-                                    <p class="price">2.990 RSD</p>
-                                    <p class="stock">Trenutno na stanju: 10</p>
-                                    <a href="#" class="btn btn-outline-warning">Detaljnije</a>
+                                    <p class="price">{{ product.price }} RSD</p>
+                                    <p class="stock">Trenutno na stanju: {{ product.stock }}</p>
+                                    <a href="#" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal" (click)="setModalProduct(product)">Kupi</a>
                                 </div>
                             </div>
                         </div>
@@ -169,3 +180,35 @@
 <footer>
     <app-footer></app-footer>
 </footer>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="modalProduct">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Kupovina proizvoda</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <img *ngIf="modalProduct.photo" src="{{ baseUrl }}{{ modalProduct.photo.content.url }}"
+                alt="..." class="modal-photo">
+                <img *ngIf="!modalProduct.photo" src="http://placehold.it/128x128" alt="..." class="modal-photo">   
+                <div class="card-body">
+                    <p class="card-text">{{ modalProduct.description }}</p>
+                    <div class="move-down">
+                        <p class="price">Stanje na računu: {{getMoney()}} </p>
+                        <p class="price">Cena: {{ modalProduct.price }} RSD</p>
+                        <p class="stock">Trenutno na stanju: {{ modalProduct.stock }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="closeModal"  data-dismiss="modal">Zatvori</button>
+          <button type="button" class="btn btn-primary" (click)="sellProduct()">Kupi</button>
+        </div>
+      </div>
+    </div>
+  </div>

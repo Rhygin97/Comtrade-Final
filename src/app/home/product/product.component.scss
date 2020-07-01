@@ -17,6 +17,12 @@ body {
     justify-content: center;   
 }
 
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .sign-in {
     background-color: #fff;
     border: 1px #e5e5e5 solid;
@@ -25,6 +31,13 @@ body {
     overflow: hidden;
     @media (max-width: $media-xl) {
         width: 80vw;
+    }
+}
+
+.product-column {
+    @media(max-width: $media-sm){
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -39,5 +52,28 @@ body {
     p {
         font-size: 14px;
         color: #666;
+    }
+
+    .card-price {
+        margin: 0;
+        text-align: right;
+        font-weight: bold;
+        font-size: 20px;
+        color: #ffc107; 
+    }
+    
+    .card-stock {
+        text-align: right;
+        font-size: 13px;
+    }
+
+    .card-text {
+        font-size: 13px;
+        text-align: left;
+        margin-bottom: 30px;
+    }
+
+    .card-title {
+        font-size: 18px;
     }
 }

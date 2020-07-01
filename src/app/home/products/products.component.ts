@@ -3,6 +3,8 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { ImageService } from 'src/app/services/image.service';
+import { ToastrService } from 'ngx-toastr';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-products',
@@ -25,6 +27,8 @@ export class ProductsComponent implements OnInit {
     private router: Router,
     private productService: ProductService,
     private imageService: ImageService,
+    private toastr: ToastrService,
+    private storageService: StorageService,
     ) { }
 
   ngOnInit(): void {
@@ -47,10 +51,12 @@ export class ProductsComponent implements OnInit {
   onSubmit() {
     this.productService.createProduct(this.productsForm.value).subscribe(
       response => {
+        this.toastr.success('Uspešno dodat proizvod!');
         console.log(response);
         this.getProducts();
       },
       error => {
+        this.toastr.error('Nešto nije u redu', error.message);
         console.log(error);
       }
     )

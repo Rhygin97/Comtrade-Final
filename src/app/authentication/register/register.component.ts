@@ -3,6 +3,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -20,6 +21,7 @@ export class RegisterComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private storageService: StorageService,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -39,12 +41,14 @@ export class RegisterComponent implements OnInit {
       (response:any) => {
         this.storageService.saveUser(JSON.stringify(response));
         this.storageService.saveToken(response.authorization.token);
-        
+        this.toastr.success('Uspešno ste se registrovali!');
         this.router.navigate(["/authentication/login"]);
       },
       error => {
+        this.toastr.error(error.message, 'Nešto nije u redu!');
         console.log(error);
       }
     )
   }
+
 }

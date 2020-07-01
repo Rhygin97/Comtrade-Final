@@ -9,7 +9,7 @@
                     <div class="module-heading">
                         <h4>Kreirajte proizvod</h4>
                     </div>
-                    <form class="products-form" [formGroup]="productsForm" (ngSubmit)="onSubmit()">
+                    <form class="products-form" [formGroup]="productsForm">
                         <div class="heading-column">
                             <div class="module-heading">
                                 <label for="name">Ime proizvoda</label>
@@ -33,7 +33,7 @@
                             </div>
                             <div class="heading-column">
                                 <div class="module-heading">
-                                    <button class="btn btn-custom" type="submit">
+                                    <button class="btn btn-custom" type="submit" (click)="onSubmit()">
                                         Kreirajte proizvod
                                     </button>
                                 </div>
@@ -64,8 +64,8 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text"> {{ product.description }} </p>
-                            <p class="card-text"> Cena: {{ product.price }} </p>
-                            <p class="card-text"> Trenutno na stanju: {{ product.stock }} </p>
+                            <p class="card-price"> Cena: {{ product.price }} </p>
+                            <p class="card-stock"> Trenutno na stanju: {{ product.stock }} </p>
                         </div>
                     </div>
                 </div>

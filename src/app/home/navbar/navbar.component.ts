@@ -7,7 +7,8 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import { StorageService } from 'src/app/services/storage.service';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormsModule } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-navbar',
@@ -22,10 +23,12 @@ export class NavbarComponent implements OnInit {
   faSearch = faSearch;
   faBars = faBars;
   faWindowClose = faWindowClose;
+  money = 0;
 
   constructor(
     private storageService: StorageService,
     private router: Router,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -33,11 +36,24 @@ export class NavbarComponent implements OnInit {
 
   logoutUser() {
     this.storageService.clearStorage();
+    this.toastr.success('Uspešno ste se odjavili!');
     this.router.navigate(["/authentication/login"]);
   }
 
-  username() {
-    this.storageService.getUser();
+  getToken() {
+    return this.storageService.getToken();
+  }
+
+  getUser() {
+    return this.storageService.getUser().username;
+  }
+
+  addMoney() {
+    return this.storageService.addMoney(this.money);
+  }
+
+  setValue() {
+    this.addMoney();
   }
 
 }

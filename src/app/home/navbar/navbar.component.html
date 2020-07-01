@@ -14,15 +14,19 @@
             <div class="top-right-navigation">
                 <div class="module-heading">
                     <ul class="list-unstyled">
-                        <li id="list-left">
+                        <li *ngIf="!getToken()" id="list-left">
                             <fa-icon [icon]="faUser"></fa-icon>
                             <a href="/authentication/register" id="link-left"> Registracija</a>
                         </li>
-                        <li id="list-right">
+                        <li *ngIf="!getToken()" id="list-right">
                             <fa-icon [icon]="faLock"></fa-icon>
                             <a href="/authentication/login" id="link-left"> Login</a>
                         </li>
-                        <li id="list-right">
+                        <li *ngIf="getToken()" id="list-left">
+                            <fa-icon [icon]="faUser"></fa-icon>
+                            <a id="link-left">{{ getUser() }}</a>
+                        </li>
+                        <li *ngIf="getToken()" id="list-right">
                             <fa-icon [icon]="faWindowClose"></fa-icon>
                             <a (click)="logoutUser();" id="link-left"> Logout</a>
                         </li>
@@ -32,16 +36,24 @@
         </div>
         <div class="navbar-mid">
             <div class="mid-left-navigation">
+                <div class="module-heading">
+                    <a href="/home/main">
+                        <img class="logo_main" src="assets/images/logo.png" alt="logo">
+                    </a>
+                </div>
             </div>
             <div class="mid-second-navigation">
-                <div class="module-heading">
-                    <div class="">
-                        <img class="logo_main" src="http://placehold.it/220x100" alt="logo">
-                    </div>
-                </div>
             </div>
             <div class="mid-third-navigation">
                 <div class="module-heading">
+                    <label for="money">Unesite količinu novca:</label>
+                    <div class="insert-value">
+                        <input class="form-control" type="text" [(ngModel)]="money"
+                        placeholder="Unesite količinu novca..." name="money">
+                        <button class="btn btn-outline-warning" (click)="setValue()">
+                            Dodaj
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="mid-right-navigation">

@@ -96,4 +96,27 @@ body {
     @media (max-width: $media-md) {
         flex-direction: column;
     }
+
+    .card-price {
+        margin: 0;
+        text-align: right;
+        font-weight: bold;
+        font-size: 20px;
+        color: #ffc107; 
+    }
+    
+    .card-stock {
+        text-align: right;
+        font-size: 13px;
+    }
+
+    .card-text {
+        font-size: 13px;
+        text-align: left;
+        margin-bottom: 30px;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
 }

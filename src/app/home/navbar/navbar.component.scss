@@ -68,24 +68,26 @@
         justify-content: center;
         margin-top: 10px;
         margin-bottom: 10px;
+        margin-right: 20px;
     }
 }
 
 .mid-second-navigation {
     display: flex;
     flex-direction: row;
-    flex: 2;
+    flex: 1;
     align-items: center;
     @media(max-width: $media-md) {
         justify-content: center;
         margin-bottom: 10px;
+        flex: 1;
     }
 }
 
 .mid-third-navigation {
     display: flex;
     flex-direction: row;
-    flex: 1;
+    flex: 2;
     align-items: center;
     margin-left: 40px;
     @media(max-width: $media-md) {
@@ -98,12 +100,22 @@
 .mid-right-navigation {
     display: flex;
     flex-direction: row;
-    flex: 2;
+    flex: 1;
     justify-content: center;
     align-items: center;
     @media(max-width: $media-md) {
         flex: 1;
         margin-bottom: 10px;
+    }
+    @media(max-width: $media-lg) {
+        padding-left: 10px;
+    }
+}
+
+.logo_main {
+    @media(max-width: $media-md) {
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -124,6 +136,14 @@
 .module-heading {
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
+}
+
+.insert-value {
+    display: flex;
+    flex-direction: row;
+    @media(max-width: $media-lg) {
+        flex-direction: column;
+    }
 }
 
 #top-nav {
@@ -193,7 +213,7 @@
     font-family: 'Roboto', sans-serif;
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 15px;
     text-transform: uppercase;
     font-stretch: normal;
     font-style: normal;

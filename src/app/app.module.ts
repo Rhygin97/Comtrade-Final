@@ -16,6 +16,10 @@ import { ContactComponent } from './home/contact/contact.component';
 import { AboutComponent } from './home/about/about.component';
 import { ProductsComponent } from './home/products/products.component';
 import { ProductComponent } from './home/product/product.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,12 @@ import { ProductComponent } from './home/product/product.component';
     ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBYXArQ89tsgWZV5pThGef9ZHLKdUiAB1M'
+    })
   ],
   providers: [
     {

@@ -28,16 +28,32 @@ getUser() {
   return JSON.parse(localStorage.getItem('user'));
 }
 
-addMoney(price) {
-  localStorage.setItem('price', price);
+addMoney(money) {
+  let currentMoney = localStorage.getItem('money');
+  if(!currentMoney) {
+    currentMoney = "0";
+  }
+  currentMoney = (parseInt(currentMoney) + parseInt(money)).toString();
+  localStorage.setItem('money', currentMoney);
 }
 
 getMoney() {
-  return localStorage.getItem('price');
+  return localStorage.getItem('money');
 }
 
-setMoney() {
+setMoney(money) {
+  localStorage.setItem('money', money);
+}
 
+removeMoney(money) {
+  let currentMoney = localStorage.getItem('money');
+  if(!currentMoney) {
+    currentMoney = "0";
+  }
+  if(parseInt(currentMoney) >= money) {
+    currentMoney = (parseInt(currentMoney) - money).toString();
+  }
+  localStorage.setItem('money', currentMoney);
 }
 
 }

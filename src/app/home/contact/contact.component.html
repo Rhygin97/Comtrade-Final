@@ -7,22 +7,25 @@
         <div class="contact-info">
             <div class="contact-column">
                 <h3 class="subtitle">Kontakt</h3>
-                <h5>... računari - SHOP</h5>
+                <h5>Malware računari - SHOP</h5>
                 <p>Adresa: <strong>Kneza Aleksandra 38 - Gornji Milanovac</strong></p>
                 <p>Telefon1: <strong>032/755-416</strong></p>
                 <p>Telefon2: <strong>065/48-41-46</strong></p>
                 <p>Radno vreme: <strong>Radnim danima od 09 - 19h, subotom od 10 - 15h</strong></p>
-                <p>E-mail adresa: <strong>...@office.com</strong></p>
+                <p>E-mail adresa: <strong>malware@prodaja.rs</strong></p>
                 <h3>Reklamacije</h3>
                 <p>Telefon: <strong>032/700-323</strong></p>
                 <h3>Zaposlenje</h3>
-                <p>Ukoliko želite da se pridružite timu ... prijavite se na email ...@.com</p>
+                <p>Ukoliko želite da se pridružite timu Malware prijavite se na email malware@office.rs</p>
             </div>
-        </div>
-        
+        </div> 
     </div>
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">  
+        <agm-marker [latitude]="lat" [longitude]="lng" [title]="title"></agm-marker>
+    </agm-map>
     </article>
 </div>
 <footer>
-    <app-footer></app-footer>
+    <app-footer>
+    </app-footer>
 </footer>
