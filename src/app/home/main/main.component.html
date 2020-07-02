@@ -9,17 +9,17 @@
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <a href="/home/product/4">
+                                <a href="/home/product/8">
                                     <img src="assets/images/main1.jpg" alt="...">
                                 </a>
                             </div>
                             <div class="carousel-item">
-                                <a href="/home/product/5">
+                                <a href="/home/product/9">
                                     <img src="assets/images/main2.jpg" alt="...">
                                 </a>
                             </div>
                             <div class="carousel-item">
-                                <a href="/home/product/6">
+                                <a href="/home/product/10">
                                     <img src="assets/images/main3.jpg" alt="...">
                                 </a>
                             </div>
@@ -37,12 +37,12 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
-                    <a href="...">
+                    <a href="/home/product/11">
                         <div class="picture-padding">
                             <img src="assets/images/rightimage1.jpg" alt="...">
                         </div>
                     </a>
-                    <a href="...">
+                    <a href="/home/product/12">
                         <img src="assets/images/rightimage2.jpg" alt="...">
                     </a>
                 </div>
@@ -53,17 +53,17 @@
             <div class="row-wrapper">
                 <div class="row">
                     <div class="col-lg-4 col-md-12">
-                        <a href="...">
+                        <a href="/home/product/13">
                             <img src="assets/images/middle1.jpg" alt="...">
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-12">
-                        <a href="...">
+                        <a href="/home/product/14">
                             <img src="assets/images/middle2.jpg" alt="...">
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-12">
-                        <a href="...">
+                        <a href="/home/product/15">
                             <img src="assets/images/middle3.jpg" alt="...">
                         </a>
                     </div>
@@ -76,9 +76,9 @@
             <div class="row-wrapper">
                 <div *ngIf="products" class="row">
                     <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <div *ngIf="getProductById(4); let product"  class="card">
+                        <div *ngIf="getProductById(16); let product"  class="card">
                             <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
-                            alt="...">
+                            alt="..." class="photo-grid">
                             <img *ngIf="!product.photo" src="http://placehold.it/128x128" alt="...">   
                             <div class="card-body">
                                 <p class="card-text">{{ product.description }}</p>
@@ -92,9 +92,9 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <div *ngIf="getProductById(2); let product" class="card">
+                        <div *ngIf="getProductById(17); let product" class="card">
                             <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
-                            alt="...">
+                            alt="..." class="photo-grid">
                             <img *ngIf="!product.photo" src="http://placehold.it/128x128" alt="...">   
                             <div class="card-body">
                                 <p class="card-text">{{ product.description }}</p>
@@ -108,9 +108,9 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <div *ngIf="getProductById(2); let product" class="card">
+                        <div *ngIf="getProductById(18); let product" class="card">
                             <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
-                            alt="...">
+                            alt="..." class="photo-grid">
                             <img *ngIf="!product.photo" src="http://placehold.it/128x128" alt="...">   
                             <div class="card-body">
                                 <p class="card-text">{{ product.description }}</p>
@@ -124,9 +124,9 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <div *ngIf="getProductById(2); let product" class="card">
+                        <div *ngIf="getProductById(19); let product" class="card">
                             <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
-                            alt="...">
+                            alt="..." class="photo-grid">
                             <img *ngIf="!product.photo" src="http://placehold.it/128x128" alt="...">   
                             <div class="card-body">
                                 <p class="card-text">{{ product.description }}</p>
@@ -140,9 +140,9 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <div *ngIf="getProductById(2); let product" class="card">
+                        <div *ngIf="getProductById(20); let product" class="card">
                             <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
-                            alt="...">
+                            alt="..." class="photo-grid">
                             <img *ngIf="!product.photo" src="http://placehold.it/128x128" alt="...">   
                             <div class="card-body">
                                 <p class="card-text">{{ product.description }}
@@ -157,9 +157,9 @@
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
-                        <div *ngIf="getProductById(2); let product" class="card">
+                        <div *ngIf="getProductById(21); let product" class="card">
                             <img *ngIf="product.photo" src="{{ baseUrl }}{{ product.photo.content.url }}"
-                            alt="...">
+                            alt="..." class="photo-grid">
                             <img *ngIf="!product.photo" src="http://placehold.it/128x128" alt="...">   
                             <div class="card-body">
                                 <p class="card-text">{{ product.description }}</p>
@@ -198,7 +198,7 @@
                 <div class="card-body">
                     <p class="card-text">{{ modalProduct.description }}</p>
                     <div class="move-down">
-                        <p class="price">Stanje na računu: {{getMoney()}} </p>
+                        <p class="price">Stanje na računu: {{getMoney()}} RSD</p>
                         <p class="price">Cena: {{ modalProduct.price }} RSD</p>
                         <p class="stock">Trenutno na stanju: {{ modalProduct.stock }}</p>
                     </div>
@@ -206,8 +206,8 @@
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" id="closeModal"  data-dismiss="modal">Zatvori</button>
-          <button type="button" class="btn btn-primary" (click)="sellProduct()">Kupi</button>
+          <button type="button" class="btn btn-outline-secondary" id="closeModal"  data-dismiss="modal">Zatvori</button>
+          <button type="button" class="btn btn-outline-warning" (click)="sellProduct()">Kupi</button>
         </div>
       </div>
     </div>
