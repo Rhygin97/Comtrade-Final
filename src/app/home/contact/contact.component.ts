@@ -10,7 +10,7 @@ export class ContactComponent implements OnInit {
 
   lat = 44.026515;
   lng = 20.462842;
-  zoom = 14;
+  zoom = 15;
   title = 'Malware store'
   mapType = 'satellite';
   // selectedMarker;
